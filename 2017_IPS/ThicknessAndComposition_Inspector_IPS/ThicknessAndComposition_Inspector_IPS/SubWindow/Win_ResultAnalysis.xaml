@@ -1,0 +1,47 @@
+﻿<Window x:Class="ThicknessAndComposition_Inspector_IPS.Win_ResultAnalysis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:ThicknessAndComposition_Inspector_IPS"
+        xmlns:xc="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Win_ResultAnalysis" Height="800" Width="1400" Closing="Window_Closing" MinWidth="1400" MinHeight="800" >
+    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <Grid Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnLoad" Content="Load Data" Style="{StaticResource btnBase}" Click="btnLoad_Click"/>
+                <Button Name="btnAlyBound" Content="Apply WaveLength" Grid.Column="1" Style="{StaticResource btnBase}" Click="btnAlyBound_Click"/>
+                <Label Content="   WaveLength  :" Grid.Column="2" Style="{StaticResource lblBase}"/>
+                <xc:DoubleUpDown Name="nudDown" Value="200" Grid.Column="3" Style="{StaticResource nudBase}" HorizontalAlignment="Center" />
+                <Label Content="~" Grid.Column="4" Style="{StaticResource lblBase}"/>
+                <xc:DoubleUpDown Name="nudUp" Value="1100" Grid.Column="5" Style="{StaticResource nudBase}" HorizontalAlignment="Center" />
+                <Label Grid.Column="6" Content="CTRL + Click : Remove Point" Style="{StaticResource lblBase}"/>
+            </Grid>
+            <Viewbox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Stretch="Fill">
+                <uc:UC_AnalysisMap x:Name="ucAnalysisMap" Width="500" Height="500"/>
+            </Viewbox>
+             <uc:UC_AnalysisChart x:Name="ucIntensityChart" Grid.Row="1" Grid.Column="1"/>
+            <uc:UC_AnalysisChart x:Name="ucReflectivityChart" Grid.Row="2" Grid.Column="1"/>
+        </Grid>
+    </DockPanel>
+</Window>

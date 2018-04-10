@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AA6ABFC-7DC0-484D-B2D4-9AAD902F95ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModelLib</RootNamespace>
+    <AssemblyName>ModelLib</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\00Main\2017_IPS\ThicknessAndComposition_Inspector_IPS\packages\System.Collections.Immutable.1.4.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\00Main\2017_IPS\ThicknessAndComposition_Inspector_IPS\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmplifiedType\ActionExt.cs" />
+    <Compile Include="AmplifiedType\EnumerableExt.cs" />
+    <Compile Include="AmplifiedType\Handler.cs" />
+    <Compile Include="AmplifiedType\Maybe.cs" />
+    <Compile Include="AmplifiedType\Nothing.cs" />
+    <Compile Include="AmplifiedType\PartialApplication.cs" />
+    <Compile Include="AmplifiedType\AccumulWriter.cs" />
+    <Compile Include="ClassInstance\DeviceRunner.cs" />
+    <Compile Include="ClassInstance\Either\Either.cs" />
+    <Compile Include="ClassInstance\Either\LEither.cs" />
+    <Compile Include="ClassInstance\Either\TEither.cs" />
+    <Compile Include="Data\Coordinate\Coordination.cs" />
+    <Compile Include="Data\Coordinate\CoordinateFunctions.cs" />
+    <Compile Include="Data\CreateLogger.cs" />
+    <Compile Include="Data\ILogData.cs" />
+    <Compile Include="Data\LogData.cs" />
+    <Compile Include="Data\NewType\WidthHeight.cs" />
+    <Compile Include="Data\StgCtrl.cs" />
+    <Compile Include="Data\StringLogger.cs" />
+    <Compile Include="Data\Coordinate\ValPosCrt.cs" />
+    <Compile Include="Factory\Logger\ILogger.cs" />
+    <Compile Include="GraphNodeInstance\AddNode.cs" />
+    <Compile Include="GraphNodeInstance\Affine.cs" />
+    <Compile Include="GraphNodeInstance\GraphLayer.cs" />
+    <Compile Include="GraphNodeInstance\MulNode.cs" />
+    <Compile Include="GraphNodeInstance\Relu.cs" />
+    <Compile Include="GraphNodeInstance\Sigmoid.cs" />
+    <Compile Include="GraphNodeInstance\SoftmaxWithLoss.cs" />
+    <Compile Include="Test\AmplifiedTest.cs" />
+    <Compile Include="Data\Coordinate\ValPosPlr.cs" />
+    <Compile Include="TypeClass\Either.cs" />
+    <Compile Include="TypeClass\Coordination2D.cs" />
+    <Compile Include="TypeClass\Device\Device.cs" />
+    <Compile Include="TypeClass\IO.cs" />
+    <Compile Include="TypeClass\LogWriter.cs" />
+    <Compile Include="TypeClass\Monad.cs" />
+    <Compile Include="TypeClass\Lgr.cs" />
+    <Compile Include="TypeClass\Functor.cs" />
+    <Compile Include="Temp\ILogData.cs" />
+    <Compile Include="Temp\IMonad.cs" />
+    <Compile Include="Temp\IWriterLog.cs" />
+    <Compile Include="Temp\Maybe.cs" />
+    <Compile Include="Temp\TestWriter.cs" />
+    <Compile Include="Temp\Writer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewType\" />
+    <Folder Include="Optimizer\" />
+    <Folder Include="Temp\Functor\" />
+    <Folder Include="TypeClassInstance\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

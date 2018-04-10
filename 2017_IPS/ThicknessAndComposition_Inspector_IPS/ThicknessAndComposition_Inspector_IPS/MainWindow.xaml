@@ -1,0 +1,73 @@
+﻿<Window x:Class="ThicknessAndComposition_Inspector_IPS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ThicknessAndComposition_Inspector_IPS"
+        mc:Ignorable="d"
+        xmlns:xc="http://schemas.xceed.com/wpf/xaml/toolkit"  
+        xmlns:uc ="clr-namespace:ThicknessAndComposition_Inspector_IPS" 
+        Title="UniSense"  Height="900" Width="1600" Loaded="Window_Loaded" Closed="Window_Closed" MinHeight="900" MinWidth="1600" 
+     WindowStyle="SingleBorderWindow" 
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Style="{StaticResource menu}">
+            <MenuItem Header="File">
+                <MenuItem x:Name="menuSaveResultonly" Header="Save ResultData" Style="{StaticResource menuItem}" Click="FileMenuClick"/>
+                <MenuItem x:Name="menuSaveRawonly" Header="Save RawData" Style="{StaticResource menuItem}" Click="FileMenuClick"/>
+                <MenuItem x:Name="menuSaveImageonly" Header="Save ImageData" Style="{StaticResource menuItem}" Click="FileMenuClick"/>
+                <MenuItem x:Name="menuSaveConfig" Header="Save Config" Style="{StaticResource menuItem}" Click="FileMenuClick"/>
+                <MenuItem x:Name="menuExit" Header="Exit" Style="{StaticResource menuItem}" Click="FileMenuClick"/>
+
+            </MenuItem>
+            <MenuItem Header="Option" >
+                <MenuItem x:Name="menuViewSpct" Header="Veiw Spctrum    "          Style="{StaticResource menuItem}" Click="OptionMenuClick"/>
+                <MenuItem x:Name="menuSetSpecStg" Header="Setting H/W"          Style="{StaticResource menuItem}" Click="OptionMenuClick"/>
+                <MenuItem x:Name="menuShowConfig" Header="Show Config"        Style="{StaticResource menuItem}" Click="OptionMenuClick"/>
+                <MenuItem x:Name="menuSetDefualtConfig" Header="Set Defualt Config"        Style="{StaticResource menuItem}" Click="OptionMenuClick"/>
+            </MenuItem>
+
+            <MenuItem Header="Analysis" >
+                <MenuItem x:Name="menuMapAnalysis" Header="Result Analysis"           Style="{StaticResource menuItem}" Click="AnalysisMenuClick"/>
+                <MenuItem x:Name="menuSinglePosScan" Header="Single Point Scan"          Style="{StaticResource menuItem}" Click="AnalysisMenuClick"/>
+                <MenuItem x:Name="menuModelUpdator" Header="Fitting Model Update"          Style="{StaticResource menuItem}" Click="AnalysisMenuClick"/>
+
+            </MenuItem>
+
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.4*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <uc:UC_LeftSideMenu x:Name="ucLSMenu" />
+                <uc:UC_Status x:Name="ucLSStatus" Grid.Row="1"/>
+            </Grid>
+            
+                <uc:UC_Map x:Name="ucMapDisplay" Grid.Column="1"   />
+               
+            
+                <uc:UC_DataGrid x:Name="ucDataGrid" Grid.Column="2" Grid.RowSpan="2" />
+
+            <UniformGrid Grid.Row="1" Grid.ColumnSpan="2" Columns="2"  >
+                <uc:UC_LiveLineChart x:Name="ucSpectrum" />
+                <uc:UC_LiveLineChart x:Name="ucReflectivity" />
+            </UniformGrid>
+
+        </Grid>
+    </Grid>
+</Window>

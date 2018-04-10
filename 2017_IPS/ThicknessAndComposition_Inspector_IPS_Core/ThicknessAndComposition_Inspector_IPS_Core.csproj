@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38132163-46C7-4521-945D-054D11A6DB42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThicknessAndComposition_Inspector_IPS_Core</RootNamespace>
+    <AssemblyName>ThicknessAndComposition_Inspector_IPS_Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\..\..\dll\emgucv\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI.GL">
+      <HintPath>..\..\..\dll\emgucv\Emgu.CV.UI.GL.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\..\..\dll\emgucv\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="EmguCvExtension">
+      <HintPath>..\..\..\dll\EmguCvExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SpeedyCoding, Version=2.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\ThicknessAndComposition_Inspector_IPS\packages\SpeedyCoding.2.1.2\lib\net462\SpeedyCoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\ThicknessAndComposition_Inspector_IPS\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XGBoost, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\ThicknessAndComposition_Inspector_IPS\packages\PicNet.XGBoost.0.1.3\lib\net40\XGBoost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analysis\BaseFunc_Analysis.cs" />
+    <Compile Include="Core.cs" />
+    <Compile Include="Analysis\Core_Analysis.cs" />
+    <Compile Include="Core_Background.cs" />
+    <Compile Include="Core_Canvas.cs" />
+    <Compile Include="Core_ResultIO.cs" />
+    <Compile Include="Core_SubFunction.cs" />
+    <Compile Include="Fitting\DataLoader.cs" />
+    <Compile Include="Fitting\DataLoader_Sub.cs" />
+    <Compile Include="Fitting\Temp_DataLoader.cs" />
+    <Compile Include="IPSExtension.cs" />
+    <Compile Include="IPSNewType\IPSNewType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationUtilTool\ApplicationUtilTool\ApplicationUtilTool.csproj">
+      <Project>{6d5c0476-77b4-4636-8b7f-08705ec43857}</Project>
+      <Name>ApplicationUtilTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fitting_Core\Fitting_Core.csproj">
+      <Project>{b77267ac-bddb-4d49-974e-5069dfc0303b}</Project>
+      <Name>Fitting_Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MachineLib\MachineLib\MachineLib.csproj">
+      <Project>{a1023d0c-1b11-4c8f-b7f6-8f4e30f0206d}</Project>
+      <Name>MachineLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModelLib\ModelLib\ModelLib.csproj">
+      <Project>{0aa6abfc-7dc0-484d-b2d4-9aad902f95ed}</Project>
+      <Name>ModelLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThicknessAndComposition_Inspector_IPS_Data\ThicknessAndComposition_Inspector_IPS_Data.csproj">
+      <Project>{4ba9cdae-111b-42d6-8428-afb03d4e10a5}</Project>
+      <Name>ThicknessAndComposition_Inspector_IPS_Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Backup\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

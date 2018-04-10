@@ -1,0 +1,58 @@
+﻿<Window x:Class="ThicknessAndComposition_Inspector_IPS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ThicknessAndComposition_Inspector_IPS"
+        mc:Ignorable="d"
+        xmlns:xc="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:uc ="clr-namespace:ThicknessAndComposition_Inspector_IPS"
+        xmlns:ui="clr-namespace:WPF_UC_Lib;assembly=WPF_UC_Lib"
+        
+        Title="MainWindow" Height="900" Width="1600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Save RawData" Style="{StaticResource menuItem}">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Option" >
+                <MenuItem x:Name="menuLoadConfig" Header="Load Scan Config" Style="{StaticResource menuItem}" Click="OptionMenuClick" />
+                <MenuItem x:Name="menuCreateConfig" Header="Create New Config" Style="{StaticResource menuItem}" Click="OptionMenuClick"/>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <uc:UC_LeftSideMenu x:Name="ucLSMenu" />
+                <uc:UC_Status x:Name="ucLSStatus" Grid.Row="1"/>
+            </Grid>
+
+            <Grid  Grid.Column="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <uc:UC_MapInfo x:Name="ucMapInfo"/>
+                <ui:DataGrid x:Name="uiDataGrid" Grid.Row="1"/>
+            </Grid>
+
+
+           
+
+        </Grid>
+    </Grid>
+</Window>

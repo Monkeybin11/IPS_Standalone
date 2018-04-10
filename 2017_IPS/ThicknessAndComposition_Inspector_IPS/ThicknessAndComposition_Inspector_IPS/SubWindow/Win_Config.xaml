@@ -1,0 +1,31 @@
+﻿<Window x:Class="ThicknessAndComposition_Inspector_IPS.Win_Config"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ThicknessAndComposition_Inspector_IPS"
+        xmlns:xc ="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        x:Name="ScanSettingWindow"
+        Title="Win_Config" Height="400" Width="400" Closing="ScanSettingWindow_Closing" >
+    <Grid>
+        <UniformGrid Columns="2" Rows="8">
+            <Label Content="Stage Com Port " Style="{StaticResource lblBase}"/>
+			<xc:DoubleUpDown x:Name="nudXStgPort" Style="{StaticResource nudBase}"/>
+			<Label Content="R Stage Speed " Style="{StaticResource lblBase}"/>
+			<xc:DoubleUpDown x:Name="nudXStgSpeed" Style="{StaticResource nudBase}"/>
+			<Label Content="X Stage Speed " Style="{StaticResource lblBase}"/>
+			<xc:DoubleUpDown x:Name="nudRStgSpeed" Style="{StaticResource nudBase}"/>
+			<Label Content="Spectrometer Scasn to Average " Style="{StaticResource lblBase}"/>
+			<xc:DoubleUpDown x:Name="nudScan2Avg" Style="{StaticResource nudBase}"/>
+			<Label Content="Spectrometer IntegrationTime " Style="{StaticResource lblBase}"/>
+			<xc:DoubleUpDown x:Name="nudIntegrationTime" Style="{StaticResource nudBase}"/>
+			<Label Content="Spectrometer Boxcar " Style="{StaticResource lblBase}"/>
+            <xc:DoubleUpDown x:Name="nudBoxcar" Style="{StaticResource nudBase}"/>
+            <Label Content="Last Edge Length" Style="{StaticResource lblBase}" />
+            <xc:DoubleUpDown x:Name="nudOuterLength" Value="148" Style="{StaticResource nudBase}"    />
+            <Button x:Name="btnSettingApply" Content="Apply" Click="btnSettingApply_Click" Style="{StaticResource btnBase}"/>
+            <Button x:Name="btnCancel" Content="Cancel" Click="btnCancel_Click" Style="{StaticResource btnBase}"/>
+        </UniformGrid>
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ThicknessAndComposition_Inspector_IPS.UC_LeftSideMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThicknessAndComposition_Inspector_IPS"
+             xmlns:xc="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="300" >
+    <Grid >
+        <DockPanel Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Border CornerRadius="6" BorderThickness="2" BorderBrush="LightSteelBlue" DockPanel.Dock="Top" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="- Function -" Grid.ColumnSpan="2" Style="{StaticResource lblTitle}" HorizontalAlignment="Center" FontWeight="ExtraBold" />
+                    <Button x:Name="btnStart"             Content="Start"                Grid.Column="0"  Grid.Row="1"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}" Background="#E1A53A2A" Foreground="AliceBlue"/>
+                    <Button x:Name="btnSaveResult"        Content="Save"                 Grid.Column="1"  Grid.Row="1"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}" Background="#D15A771E" Foreground="AliceBlue"/>
+                    <Button x:Name="btnRefScan"           Content="Ref"                  Grid.Column="0"  Grid.Row="2"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}" Background="#D1644C13" Foreground="AliceBlue"/>
+                    <Button x:Name="btnLoadConfig"        Content="Load Config"          Grid.Column="1"  Grid.Row="2"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}" Background="#D4356892" Foreground="AliceBlue"/>
+
+                    <Button x:Name="btnDarkScan"          Content="Dark"                 Grid.Column="1"  Grid.Row="3"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}"/>
+                    <Button x:Name="btnSetWave"           Content="WaveLen"              Grid.Column="0"  Grid.Row="3"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}"/>
+                    <Button x:Name="btnHome"              Content="Home"                 Grid.Column="1"  Grid.Row="4"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}"/>
+                    <Button x:Name="btnReconnect"         Content="Reconnect"            Grid.Column="0"  Grid.Row="4"     Click="LeftSideBtnClick" Style="{StaticResource btnLSide}"/>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </Grid>
+</UserControl>

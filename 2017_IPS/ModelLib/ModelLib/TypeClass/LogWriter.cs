@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ModelLib.Monad
+{
+    public interface LogWriter<W>
+    {
+        W AddLog { get; set; }
+        W AddNothing { get; set;}
+    }
+}

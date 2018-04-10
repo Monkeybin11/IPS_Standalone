@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="ThicknessAndComposition_Inspector_IPS.UC_LiveLineChartMulti"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThicknessAndComposition_Inspector_IPS"
+              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="300">
+    <DockPanel  Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border CornerRadius="6" BorderThickness="2" BorderBrush="LightSteelBlue" DockPanel.Dock="Top">
+            <lvc:CartesianChart x:Name="chtLiveLine" Margin="5"  DisableAnimations="True"  Hoverable="False" DataTooltip="{x:Null}" >
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis 
+                    x:Name="axisX">
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis 
+                    x:Name="axisY"
+                    >
+                    </lvc:Axis>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
+        </Border>
+    </DockPanel>
+</UserControl>
+
