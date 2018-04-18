@@ -25,7 +25,7 @@ namespace Fitting_Core
 		public static XGBRegressor CreateModel( List<IpsDataSet> datas )
 		{
 			LoadedDatas = datas;
-			Regr = new XGBRegressor();
+			Regr = new XGBRegressor( maxDepth : 32 , nEstimators : 50  );
 			Regr.Fit( GetReflectivity( datas ) , GetKlaThickness( datas ) );
 			return Regr;
 		}

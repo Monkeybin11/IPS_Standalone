@@ -27,10 +27,8 @@ namespace ThicknessAndComposition_Inspector_IPS_Core
 	public partial class IPSCore
 	{
 		#region OpFun
-
 		public bool OpReady( ScanReadyMode mode )
 		{
-
 			OpMaxSpeed();
 			LEither<bool> result = new LEither<bool>(true);
 			switch ( mode )
@@ -89,23 +87,6 @@ namespace ThicknessAndComposition_Inspector_IPS_Core
 				 Stg.SendAndReady( Stg.GoAbs + 0.ToPos( Axis.X ) );
 				 Stg.SendAndReady( Stg.Go );
 			 } );
-		
-
-			//Stopwatch stw = new Stopwatch();
-			//bool flgout = false;
-			//stw.Start();
-			//while ( !flgout )
-			//{
-			//	if ( stw.ElapsedMilliseconds / 1000 > SpectrometerDelayTime )
-			//		flgout = true;
-			//}
-			//stw.ElapsedMilliseconds.Print( "Waited Time" );
-			//stw.Stop();
-
-			//await Task.Delay( SpectrometerDelayTime );
-
-			
-
 
 			StringBuilder stb = new StringBuilder();
 			refraw.ActLoop( x =>
@@ -145,19 +126,13 @@ namespace ThicknessAndComposition_Inspector_IPS_Core
 			var resHome = new TEither( Stg as IStgCtrl , 12)
 						.Bind( x => x.Act( f =>
 							f.SendAndReady( f.Home + Axis.W.ToIdx() ) ).ToTEither( 12 ) , "R or X Home Fail" );
-			//.Bind( x => x.Act( f =>
-			//			f.SendAndReady( f.GoAbs
-			//							+ 0.ToOffPos(Axis.X) ) )
-			//					 .ToTEither( 1 ) , "Opposit Movement Fail" )
-			//.Bind( x => x.Act( f =>
-			//	f.SendAndReady( f.Go ) ).ToTEither( 1 ) , "Stage Movement Fail" );
+
 			if ( !resHome.IsRight ) return false.Act( x => FlgHomeDone = false );
 			return true.Act( x => FlgHomeDone = true );
 		}
 
 		public bool OpLoadAbsReflecDatas() 
 		{
-			//string path = AppDomain.CurrentDomain.BaseDirectory + @"absreflect\Siref10.csv";
 			string path = AppDomain.CurrentDomain.BaseDirectory + @"absreflect\10deg_siabsreflect.csv";
 			if ( !File.Exists( path ) )
 			{
@@ -205,7 +180,6 @@ namespace ThicknessAndComposition_Inspector_IPS_Core
 									  .GetInterfaces() // interface of type
 									  .Where( x => x.Name == "ICollection" )
 									  .Count();
-				"".Print();
 				if ( condition > 0 ) continue;
 
 				configlog.Append( " - " + config.Name + " : " + config.GetValue( Config ) );
@@ -228,15 +202,8 @@ namespace ThicknessAndComposition_Inspector_IPS_Core
 			Stg.SendAndReady( "S:24" );
 			Stg.SendAndReady( "S:15" );
 
-			//Stg.SendAndReady( Stg.SetSpeed
-			//				+ Axis.W.ToIdx()
-			//				+ ( Config.RStgSpeed ).ToSpeed()
-			//				+ ( Config.XStgSpeed ).ToSpeed() );
-
 			Spctr.ScanAvg( Config.Scan2Avg );
-			//Spctr.ScanAvg( 2 );
 			Spctr.IntegrationTime( Config.IntegrationTime*1000 );
-			//Spctr.IntegrationTime( 600000 );
 			Spctr.BoxCar( Config.Boxcar );
 		}
 
@@ -285,31 +252,7 @@ namespace ThicknessAndComposition_Inspector_IPS_Core
 			=> src => pickedidx.Count == 0 ? src : pickedidx.Select( x => src [ x ] ).ToArray();
 
 
-		public double [ ] SplitBound( double [ ] src , int divide )
-		{
-			var min = src.Min();
-			var max = src.Max();
-
-			var step = (max - min) / divide;
-
-			var res = new double[divide];
-
-
-
-
-			return new double [ ]
-				{
-
-
-				};
-
-		}
-		public double [ ] ImgDataTo5Group( double[] src ,double[] bound)
-		{
-
-
-			return null;
-		}
+	
 
 		#endregion
 
@@ -368,7 +311,6 @@ namespace ThicknessAndComposition_Inspector_IPS_Core
 				return res [ 0 ].Select( x => Convert.ToDouble( x ) ).ToArray();
 			}
 		}
-
 
 		public List<PlrCrd> CreatedefualtPos()
 		{
