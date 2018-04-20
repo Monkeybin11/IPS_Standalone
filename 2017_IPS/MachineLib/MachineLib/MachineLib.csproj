@@ -63,9 +63,6 @@
     <Reference Include="NETOmniDriver-NET40">
       <HintPath>dll\NETOmniDriver-NET40.dll</HintPath>
     </Reference>
-    <Reference Include="SpeedyCoding, Version=2.1.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\..\..\00Main\2017_IPS\ThicknessAndComposition_Inspector_IPS\packages\SpeedyCoding.2.1.2\lib\net462\SpeedyCoding.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -99,6 +96,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SpeedyCoding\SpeedyCoding\SpeedyCoding\SpeedyCoding.csproj">
+      <Project>{04ef47cb-6add-4ca9-8dc9-9443aa536f84}</Project>
+      <Name>SpeedyCoding</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ApplicationUtilTool\ApplicationUtilTool\ApplicationUtilTool.csproj">
       <Project>{6d5c0476-77b4-4636-8b7f-08705ec43857}</Project>
       <Name>ApplicationUtilTool</Name>

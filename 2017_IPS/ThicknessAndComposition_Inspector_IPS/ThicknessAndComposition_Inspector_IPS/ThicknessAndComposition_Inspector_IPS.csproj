@@ -71,9 +71,6 @@
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SpeedyCoding, Version=2.1.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\SpeedyCoding.2.1.2\lib\net462\SpeedyCoding.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -291,6 +288,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SpeedyCoding\SpeedyCoding\SpeedyCoding\SpeedyCoding.csproj">
+      <Project>{04ef47cb-6add-4ca9-8dc9-9443aa536f84}</Project>
+      <Name>SpeedyCoding</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Fitting_Core\Fitting_Core.csproj">
       <Project>{b77267ac-bddb-4d49-974e-5069dfc0303b}</Project>
       <Name>Fitting_Core</Name>
